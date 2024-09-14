@@ -56,6 +56,8 @@ namespace ja_learner
         public MainForm()
         {
             InitializeComponent();
+
+
         }
         private async Task InitializeWebView()
         {
@@ -88,7 +90,7 @@ namespace ja_learner
             dictForm.Show();
             dictForm.Hide();
             UpdateExtraPromptCombobox();
-            
+
             // 初始化 MainForm
             if (Program.APP_SETTING.HttpProxy != string.Empty)
             {
@@ -97,7 +99,23 @@ namespace ja_learner
             }
             comboBoxTranslator.SelectedIndex = 0;
             defaultMinSize = MinimumSize;
+            // 应用设置
+            await ApplySettings();
+
+
         }
+        private async Task ApplySettings()
+        {
+            // 确保 CoreWebView2 已经初始化
+            await webView.EnsureCoreWebView2Async(null);
+
+            ClipBoardMode = true;
+            checkBoxAutoTranslate.Checked = Program.APP_SETTING.AutoTranslate;
+            checkBoxDark.Checked = Program.APP_SETTING.DarkMode;
+            webView.CoreWebView2.Profile.PreferredColorScheme = Program.APP_SETTING.DarkMode ? CoreWebView2PreferredColorScheme.Dark : CoreWebView2PreferredColorScheme.Light;
+            checkBoxTopmost.Checked = Program.APP_SETTING.Topmost;
+        }
+
 
         private void CoreWebView2_NewWindowRequested(object sender, CoreWebView2NewWindowRequestedEventArgs e)
         {
@@ -239,7 +257,10 @@ namespace ja_learner
             set
             {
                 checkBoxClipboardMode.Checked = value;
-                timerGetClipboard.Enabled = value;
+                if (webView.CoreWebView2 != null)
+                {
+                    timerGetClipboard.Enabled = value;
+                }
                 btnInputText.Enabled = !value;
             }
         }

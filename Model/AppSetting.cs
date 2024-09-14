@@ -7,6 +7,10 @@ public class AppSettingOptions
     public GPTOptions? GPT { get; set; }
     public bool AnkiEnabled { get; set; } = false;
     public AnkiOptions? Anki { get; set; }
+    public bool ClipboardMode { get; set; } = false;
+    public bool AutoTranslate { get; set; } = false;
+    public bool DarkMode { get; set; } = false;
+    public bool Topmost { get; set; } = false;
 }
 
 public class GPTOptions

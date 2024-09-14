@@ -11,7 +11,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <GenerateDocumentationFile>False</GenerateDocumentationFile>
 	<MeCabUseDefaultDictionary>True</MeCabUseDefaultDictionary>
+	<ApplicationIcon>favicon\favicon.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="favicon\favicon.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MeCab.DotNet" Version="1.2.0" />

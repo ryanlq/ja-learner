@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DictForm));
             webView = new Microsoft.Web.WebView2.WinForms.WebView2();
             tabControl1 = new TabControl();
             tabPageDict = new TabPage();
@@ -45,9 +46,10 @@
             webView.CreationProperties = null;
             webView.DefaultBackgroundColor = Color.White;
             webView.Dock = DockStyle.Fill;
-            webView.Location = new Point(3, 3);
+            webView.Location = new Point(5, 4);
+            webView.Margin = new Padding(5, 4, 5, 4);
             webView.Name = "webView";
-            webView.Size = new Size(410, 425);
+            webView.Size = new Size(648, 632);
             webView.TabIndex = 0;
             webView.ZoomFactor = 1D;
             webView.WebMessageReceived += webView_WebMessageReceived;
@@ -58,18 +60,20 @@
             tabControl1.Controls.Add(tabPageGpt);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 0);
+            tabControl1.Margin = new Padding(5, 4, 5, 4);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(424, 461);
+            tabControl1.Size = new Size(666, 678);
             tabControl1.TabIndex = 1;
             // 
             // tabPageDict
             // 
             tabPageDict.Controls.Add(webView);
-            tabPageDict.Location = new Point(4, 26);
+            tabPageDict.Location = new Point(4, 34);
+            tabPageDict.Margin = new Padding(5, 4, 5, 4);
             tabPageDict.Name = "tabPageDict";
-            tabPageDict.Padding = new Padding(3);
-            tabPageDict.Size = new Size(416, 431);
+            tabPageDict.Padding = new Padding(5, 4, 5, 4);
+            tabPageDict.Size = new Size(658, 640);
             tabPageDict.TabIndex = 0;
             tabPageDict.Text = "词典";
             tabPageDict.UseVisualStyleBackColor = true;
@@ -77,28 +81,33 @@
             // tabPageGpt
             // 
             tabPageGpt.Controls.Add(translationPanel);
-            tabPageGpt.Location = new Point(4, 26);
+            tabPageGpt.Location = new Point(4, 34);
+            tabPageGpt.Margin = new Padding(5, 4, 5, 4);
             tabPageGpt.Name = "tabPageGpt";
-            tabPageGpt.Padding = new Padding(3);
-            tabPageGpt.Size = new Size(416, 431);
+            tabPageGpt.Padding = new Padding(5, 4, 5, 4);
+            tabPageGpt.Size = new Size(658, 640);
             tabPageGpt.TabIndex = 1;
             tabPageGpt.Text = "ChatGPT";
             tabPageGpt.UseVisualStyleBackColor = true;
             // 
             // translationPanel
             // 
-            translationPanel.Dock = DockStyle.Fill;
-            translationPanel.Location = new Point(3, 3);
+            translationPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            translationPanel.BackColor = Color.FromArgb(40, 40, 40);
+            translationPanel.Location = new Point(9, 9);
+            translationPanel.Margin = new Padding(8, 6, 8, 6);
             translationPanel.Name = "translationPanel";
-            translationPanel.Size = new Size(410, 425);
+            translationPanel.Size = new Size(974, 1103);
             translationPanel.TabIndex = 0;
             // 
             // DictForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(424, 461);
+            ClientSize = new Size(666, 678);
             Controls.Add(tabControl1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(5, 4, 5, 4);
             MaximizeBox = false;
             Name = "DictForm";
             Text = "KS的日语学习工具";

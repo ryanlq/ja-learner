@@ -36,6 +36,8 @@
             // textBoxSentence
             // 
             textBoxSentence.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxSentence.BackColor = Color.FromArgb(30, 30, 30); // 暗黑背景色
+            textBoxSentence.ForeColor = Color.White; // 白色文本
             textBoxSentence.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxSentence.Location = new Point(3, 3);
             textBoxSentence.Multiline = true;
@@ -47,6 +49,8 @@
             // 
             textBoxResult.AcceptsReturn = true;
             textBoxResult.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxResult.BackColor = Color.FromArgb(30, 30, 30); // 暗黑背景色
+            textBoxResult.ForeColor = Color.White; // 白色文本
             textBoxResult.Font = new Font("Microsoft YaHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxResult.Location = new Point(3, 114);
             textBoxResult.Multiline = true;
@@ -58,18 +62,21 @@
             // buttonInterpret
             // 
             buttonInterpret.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            buttonInterpret.BackColor = Color.FromArgb(50, 50, 50); // 暗黑背景色
+            buttonInterpret.ForeColor = Color.White; // 白色文本
             buttonInterpret.Location = new Point(3, 85);
             buttonInterpret.Name = "buttonInterpret";
             buttonInterpret.Size = new Size(545, 23);
             buttonInterpret.TabIndex = 3;
             buttonInterpret.Text = "分析";
-            buttonInterpret.UseVisualStyleBackColor = true;
+            buttonInterpret.UseVisualStyleBackColor = false;
             buttonInterpret.Click += buttonInterpret_Click;
             // 
             // TranslationPanel
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(40, 40, 40); // 暗黑背景色
             Controls.Add(buttonInterpret);
             Controls.Add(textBoxResult);
             Controls.Add(textBoxSentence);

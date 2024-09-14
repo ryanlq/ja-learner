@@ -65,7 +65,6 @@ namespace ja_learner
             BringToFront();
             Activate();
         }
-
         private async void DictForm_Load(object sender, EventArgs e)
         {
             await InitializeWebView();
@@ -78,6 +77,7 @@ namespace ja_learner
 
         async public void UpdateTranslationPanelText(string text)
         {
+            await InitializeWebView();
             await webView.ExecuteScriptAsync($"setCurrentText('{text}')");
             translationPanel.UpdateText(text);
         }
